@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Widget Test</title>
+</head>
+<body>
+  <h1>FootCare Chatbot Smoke Test</h1>
+  <!-- Load your snapshot widget locally -->
+  <script src="./snapshot/widget.js"></script>
+  <script>
+    // Initialize exactly as you do in production
+    fcChat('init', {
+      botName: 'Fiona',
+      clinicLocation: 'all',
+      allowImageUpload: true,
+      theme: 'teal',
+      position: 'right',
+      assetsBaseUrl: 'https://footcareclinic.engageiobots.com'
+    });
+    // Optionally auto-open for quick check
+    fcChat('open');
+  </script>
+</body>
+</html>

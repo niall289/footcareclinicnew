@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Widget Test</title>
-  <link rel="stylesheet" href="https://footcareclinic.engageiobots.com/widget.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot Smoke Test</title>
 
-</head>
-<body>
-  <h1>FootCare Chatbot Smoke Test</h1>
-  <!-- Load your snapshot widget locally -->
-  <script src="./widget.js"></script>
+    <!-- 1) Core widget styles -->
+    <link rel="stylesheet" href="https://footcareclinic.engageiobots.com/widget.css">
 
-  <script>
-    // Initialize exactly as you do in production
-    fcChat('init', {
-      botName: 'Fiona',
-      clinicLocation: 'all',
-      allowImageUpload: true,
-      theme: 'teal',
-      position: 'right',
-      assetsBaseUrl: 'https://footcareclinic.engageiobots.com'
-    });
-    // Optionally auto-open for quick check
-    fcChat('open');
-  </script>
-</body>
+    <!-- 2) Your live-theme overrides -->
+    <style>
+      /* Teal button & header to match production */
+      #fc-chat-widget-button,
+      .fc-header { background-color: #00847e !important; }
+      .fc-header h2 { color: white !important; }
+    </style>
+  </head>
+
+  <body>
+    <h1>FootCare Chatbot Smoke Test</h1>
+
+    <!-- 3) Load the EXACT same widget.js -->
+    <script src="https://footcareclinic.engageiobots.com/widget.js"></script>
+
+    <script>
+      // 4) Initialize exactly as in production
+      fcChat('init', {
+        botName: 'Fiona',
+        clinicLocation: 'all',
+        allowImageUpload: true,
+        theme: 'teal',
+        position: 'right',
+        assetsBaseUrl: 'https://footcareclinic.engageiobots.com'
+      });
+      // 5) Auto-open for immediate visual check
+      fcChat('open');
+    </script>
+  </body>
 </html>
